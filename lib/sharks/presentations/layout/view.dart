@@ -14,12 +14,12 @@ class SharksLayout extends StatefulWidget {
 
 class _SharksLayoutState extends State<SharksLayout> {
   int currentIndex = 0;
-  final List<Widget> children = [    const HomeView(),
-
+  final List<Widget> children = [
+    const HomeView(),
     const FreelanceView(),
     const ChatsPage(),
     const HomeView(),
-    const HomeView(),
+    Container(),
   ];
 
   @override

@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import 'details.dart';
@@ -89,7 +87,10 @@ class Item extends StatelessWidget {
                 lastMessage,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: Theme.of(context).textTheme.labelMedium!.copyWith(fontSize: 16),
+                style: Theme.of(context)
+                    .textTheme
+                    .labelMedium!
+                    .copyWith(fontSize: 16),
               ),
             ),
             Text(
@@ -98,12 +99,13 @@ class Item extends StatelessWidget {
             ),
           ],
         ),
-        title: Text(
-            name,
+        title: Text(name,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.displayMedium!.copyWith(fontSize: 20)
-        ),
+            style: Theme.of(context)
+                .textTheme
+                .displayMedium!
+                .copyWith(fontSize: 20)),
         leading: CircleAvatar(
           radius: 40,
           backgroundColor: Colors.grey,
@@ -113,13 +115,14 @@ class Item extends StatelessWidget {
         trailing: IconButton(
           onPressed: () {},
           icon: const Icon(
-            Feather.more_vertical,
+            Icons.more_vert,
           ),
         ),
       ),
     );
   }
 }
+
 bool isStartWithArabic(String letter) {
   return RegExp(r'^[\u0600-\u06FF]').hasMatch(letter);
 }

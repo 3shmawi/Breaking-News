@@ -5,7 +5,6 @@ import 'package:c3/mohamed_l3/news_app/view/_resources/assets_manager.dart';
 import 'package:c3/mohamed_l3/news_app/view/_resources/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../search/view.dart';

@@ -1,7 +1,6 @@
 import 'package:c3/sharks/presentations/layout/chats/view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 class ChatDetailPage extends StatefulWidget {
   const ChatDetailPage({super.key});
@@ -124,7 +123,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                   },
                   splashColor: Colors.blue[900],
                   icon: Icon(
-                    Feather.send,
+                    Icons.send, //Todo this icon
                     color: Colors.blue[900],
                   ),
                 ),

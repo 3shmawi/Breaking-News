@@ -70,7 +70,7 @@ class DeDrawer extends StatelessWidget {
   }
 
   Widget _darkModeBtn(cubit) => ListTile(
-        leading: const Icon(FlutterIcons.theme_light_dark_mco),
+        leading: const Icon(Icons.light_mode),
         title: const Text('Dark mode'),
         trailing: Switch(
           value: cubit.darkMode,
