@@ -74,7 +74,7 @@ class HomeView extends StatelessWidget {
                         spreadRadius: 2,
                         blurRadius: 5,
                         offset:
-                        const Offset(0, 3), // changes position of shadow
+                            const Offset(0, 3), // changes position of shadow
                       ),
                     ],
                   ),
@@ -112,7 +112,7 @@ class HomeView extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 210,
+            height: MediaQuery.of(context).size.height / 3.5,
             child: ListView.builder(
               padding: const EdgeInsets.all(10),
               scrollDirection: Axis.horizontal,
@@ -136,7 +136,7 @@ class HomeView extends StatelessWidget {
                               const CircleAvatar(
                                 radius: 20,
                                 backgroundColor: Colors.black12,
-                                child:  Text(
+                                child: Text(
                                   "TH",
                                   style: TextStyle(
                                     color: Colors.black,
@@ -150,8 +150,7 @@ class HomeView extends StatelessWidget {
                               ),
                               Expanded(
                                 child: Column(
-                                  crossAxisAlignment:
-                                  CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     const Text(
                                       "TechHire",
@@ -165,7 +164,8 @@ class HomeView extends StatelessWidget {
                                       "Egypt, Cairo",
                                       style: TextStyle(
                                         color: Colors.grey[400],
-                                        fontSize: 12,),
+                                        fontSize: 12,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -188,8 +188,7 @@ class HomeView extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding:
-                            const EdgeInsets.symmetric(vertical: 8.0),
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Row(
                               children: [
                                 Text(
@@ -225,8 +224,8 @@ class HomeView extends StatelessWidget {
                               ),
                               const Text(
                                 "/Month",
-                                style: TextStyle(
-                                    color: Colors.grey, fontSize: 14),
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 14),
                               ),
                             ],
                           ),
@@ -250,7 +249,10 @@ class HomeView extends StatelessWidget {
             ),
           ),
           ListView.builder(
-            padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20,),
+            padding: const EdgeInsets.symmetric(
+              vertical: 10,
+              horizontal: 20,
+            ),
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             itemBuilder: (context, index) {
@@ -283,7 +285,8 @@ class HomeView extends StatelessWidget {
                               children: [
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       const Text(
                                         "TichHire",

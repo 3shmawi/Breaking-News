@@ -1,7 +1,6 @@
 import 'package:c3/bmi/constants.dart';
 import 'package:flutter/material.dart';
 
-
 class BmiResultView extends StatelessWidget {
   const BmiResultView({
     required this.index,
@@ -22,18 +21,13 @@ class BmiResultView extends StatelessWidget {
           "Bmi Results",
         ),
       ),
-      body:  Expanded(
-        child:   Center(
-          child: Image.asset(
-            isMale
-                ? AppConsts.man[index]
-                : AppConsts.woman[index],
-            color:AppConsts.colors[index],
-            fit: BoxFit.contain,
-          ),
+      body: Center(
+        child: Image.asset(
+          isMale ? AppConsts.man[index] : AppConsts.woman[index],
+          color: AppConsts.colors[index],
+          fit: BoxFit.contain,
         ),
       ),
     );
-
   }
 }

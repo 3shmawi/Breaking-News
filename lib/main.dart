@@ -1,10 +1,15 @@
+import 'package:c3/salma_l3/app/app.dart';
 import 'package:flutter/material.dart';
 
-import 'mohamed_l3/news_app/app/app.dart';
-
-//StatelessWidget   StatefulWidget
+//stateless   stateful
 void main() {
   runApp(
-    const Wa2lApp(),
+    SalmaL3App(),
   );
 }
+
+//first step void main
+//runApp()
+//Material app
+
+//instagram tiktok

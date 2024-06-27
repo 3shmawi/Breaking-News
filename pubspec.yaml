@@ -40,16 +40,19 @@ dependencies:
   provider: ^6.1.1
   fluttertoast: ^8.2.4
   lottie: ^3.0.0
-#  flutter_icons:
-#    git:
-#      url: https://github.com/adarsh-technocrat/flutter-icons
+  flutter_icons:
+    git:
+      url: https://github.com/adarsh-technocrat/flutter-icons
   package_info_plus: ^5.0.1
   image_picker: ^1.0.7
   url_launcher: ^6.2.5
   flutter_staggered_animations: ^1.1.1
   math_expressions: ^2.4.0
+  firebase_core: ^2.27.0
 
 dev_dependencies:
+  build_runner: ^2.4.0
+  build_web_compilers: ^4.0.4
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: "^0.13.1"
@@ -90,11 +93,15 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/tiktok/
+    - assets/instagram/
     - assets/news/
     - assets/json/
     - assets/bmi/man/
     - assets/bmi/woman/
     - assets/m_news_icons/
+    - lib/tasneim/assets/
+    - lib/salma/assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

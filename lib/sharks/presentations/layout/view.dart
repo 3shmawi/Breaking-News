@@ -1,6 +1,7 @@
 import 'package:c3/sharks/app/icon_broken.dart';
 import 'package:c3/sharks/presentations/layout/freelance/view.dart';
 import 'package:c3/sharks/presentations/layout/home/view.dart';
+import 'package:c3/sharks/presentations/layout/setting/view.dart';
 import 'package:flutter/material.dart';
 
 import 'chats/view.dart';
@@ -19,7 +20,7 @@ class _SharksLayoutState extends State<SharksLayout> {
     const FreelanceView(),
     const ChatsPage(),
     const HomeView(),
-    Container(),
+    ProfilePage(),
   ];
 
   @override

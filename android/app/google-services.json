@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "157091448589",
+    "project_id": "news-d048d",
+    "storage_bucket": "news-d048d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157091448589:android:e9963c95625da64ceb5244",
+        "android_client_info": {
+          "package_name": "com.ashmawi.c3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ_BP3sIHjuCCIL4xOuC1A6s1BJ5uMnUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,17 +1,14 @@
-
-//stless
+import 'package:c3/salma/insta/screens/splash.dart';
 import 'package:flutter/material.dart';
 
-import '../views/instgram_bar.dart';
-
-class TasniemApp extends StatelessWidget {
-  const TasniemApp({super.key});
+class SalmaApp extends StatelessWidget {
+  const SalmaApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: InstagramBar(),
+      home: SplashView(),
     );
   }
 }

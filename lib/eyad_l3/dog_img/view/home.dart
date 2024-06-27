@@ -32,10 +32,10 @@ class _HomeDogViewState extends State<HomeDogView> {
               child: CircularProgressIndicator(),
             )
           : Center(
-            child: Image.network(
+              child: Image.network(
                 data!.message,
               ),
-          ),
+            ),
     );
   }
 }
