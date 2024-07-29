@@ -48,23 +48,17 @@ class DefaultAppBar extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              Stack(
-                alignment: AlignmentDirectional.center,
-                children: [
-                  CircleAvatar(
-                    radius: 9.5,
-                    backgroundColor: Colors.white60,
+              CircleAvatar(
+                radius: 9.5,
+                backgroundColor: Colors.white60,
+                child: CircleAvatar(
+                  radius: 8,
+                  backgroundColor: Colors.red,
+                  child: Text(
+                    '4',
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                   ),
-                  CircleAvatar(
-                    radius: 8,
-                    backgroundColor: Colors.red,
-                    child: Text(
-                      '4',
-                      style:
-                          TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ],
           ),
@@ -110,7 +104,9 @@ class SearchBar extends StatelessWidget {
       width: double.infinity,
       height: 45,
       decoration: BoxDecoration(
-          color: Colors.grey[800], borderRadius: BorderRadius.circular(30)),
+        color: Colors.grey[800],
+        borderRadius: BorderRadius.circular(30),
+      ),
       child: const Row(
         children: [
           Icon(
@@ -143,7 +139,7 @@ class StoriesBar extends StatefulWidget {
 class _StoriesBarState extends State<StoriesBar> {
   final List<Stories> stories = [
     Stories(
-      name: 'Mohamed Ashmawi',
+      name: 'Mohamed Ashmawi lkjdf slklds woie',
       img:
           'https://images.unsplash.com/photo-1700587085844-b96c27958df2?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8',
     ),
@@ -248,12 +244,14 @@ class _DefaultBottomNavBarState extends State<DefaultBottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
       currentIndex: _currentIndex,
       onTap: (index) {
         _currentIndex = index;
         setState(() {});
       },
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.black38,
+      unselectedItemColor: Colors.grey,
       items: const [
         BottomNavigationBarItem(
           icon: Icon(

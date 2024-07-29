@@ -1,5 +1,6 @@
-import 'package:c3/salma_l3/projects/intro_api/view.dart';
 import 'package:flutter/material.dart';
+
+import '../projects/get_user/view.dart';
 
 class SalmaL3App extends StatelessWidget {
   const SalmaL3App({super.key});
@@ -7,7 +8,8 @@ class SalmaL3App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: AnimalView(),
+      debugShowCheckedModeBanner: false,
+      home: SalmaUserProfilePageView(),
     );
   }
 }
