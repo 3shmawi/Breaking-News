@@ -1,17 +1,19 @@
-import 'package:c3/ahmed_alaa/screens/l1&l2/secret_page.dart';
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 
-class AlaaHomeView extends StatefulWidget {
-  const AlaaHomeView({super.key});
+class CalculatorApp extends StatefulWidget {
+  const CalculatorApp({super.key});
 
   @override
-  State<AlaaHomeView> createState() => _AlaaHomeViewState();
+  State<CalculatorApp> createState() => _CalculatorAppState();
 }
 
-class _AlaaHomeViewState extends State<AlaaHomeView> {
-  List<String> results = [];
-  final String password = "81243";
+class _CalculatorAppState extends State<CalculatorApp> {
+  String expression = "";
+  String result = "0";
+  String equation = "0";
+  double equationFontSize = 40;
+  double resultFontSize = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -31,37 +33,6 @@ class _AlaaHomeViewState extends State<AlaaHomeView> {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Align(
-            alignment: Alignment.topLeft,
-            child: Text(
-              "Recent Results",
-              style: TextStyle(
-                fontSize: 30.0,
-                color: Colors.black,
-              ),
-            ),
-          ),
-          Expanded(
-            child: ListView.separated(
-              padding: EdgeInsets.all(10),
-              itemCount: results.length,
-              itemBuilder: (context, index) {
-                int reverseIndex = results.length - index - 1;
-                return Text(
-                  results[reverseIndex],
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 20.0,
-                  ),
-                );
-              },
-              separatorBuilder: (context, index) {
-                return Divider(
-                  color: Colors.cyan,
-                );
-              },
-            ),
-          ),
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 20.0,
@@ -148,6 +119,7 @@ class _AlaaHomeViewState extends State<AlaaHomeView> {
               _btnItem(
                 "=",
                 flex: 2,
+                txtColor: Colors.black,
                 bgColor: Colors.deepOrange,
               ),
             ],
@@ -157,21 +129,40 @@ class _AlaaHomeViewState extends State<AlaaHomeView> {
     );
   }
 
-  String equation = "0";
-  String result = "0";
-  String expression = "";
-  double equationFontSize = 20.0;
-  double resultFontSize = 40.0;
-
-//⌫
-  buttonPressed(String buttonText) {
-    if (equation == password) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => SecretPage(),
+  _btnItem(
+    String text, {
+    Color txtColor = Colors.white,
+    Color bgColor = Colors.cyan,
+    int flex = 1,
+  }) =>
+      Expanded(
+        flex: flex,
+        child: GestureDetector(
+          onTap: () {
+            buttonPressed(text);
+          },
+          child: Container(
+            height: 50,
+            margin: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: bgColor,
+            ),
+            child: Center(
+              child: Text(
+                text,
+                style: TextStyle(
+                  color: txtColor,
+                  fontSize: 25,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ),
         ),
       );
-    }
+
+  buttonPressed(String buttonText) {
     setState(() {
       if (buttonText == "CLEAR") {
         equation = "0";
@@ -199,7 +190,7 @@ class _AlaaHomeViewState extends State<AlaaHomeView> {
 
           ContextModel cm = ContextModel();
           result = '${exp.evaluate(EvaluationType.REAL, cm)}';
-          results.add("${equation} = ${result}");
+          // results.add("${equation} = ${result}");
         } catch (e) {
           result = "Error";
         }
@@ -214,38 +205,4 @@ class _AlaaHomeViewState extends State<AlaaHomeView> {
       }
     });
   }
-
-  _btnItem(
-    String text, {
-    Color txtColor = Colors.white,
-    Color bgColor = Colors.cyan,
-    int flex = 1,
-  }) =>
-      Expanded(
-        flex: flex,
-        child: GestureDetector(
-          onTap: () => buttonPressed(text),
-          child: Container(
-            height: 50,
-            margin: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: bgColor,
-            ),
-            child: Center(
-              child: Text(
-                text,
-                style: TextStyle(
-                  color: txtColor,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-          ),
-        ),
-      );
 }
-//runApp >> MaterialApp
-//Scaffold
-//Text Icon  Column Row Stack Container Expanded

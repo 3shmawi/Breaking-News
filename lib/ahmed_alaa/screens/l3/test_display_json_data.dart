@@ -20,7 +20,7 @@ class _DisplayDataState extends State<DisplayData> {
     setState(() {
       comingData = {};
     });
-    _dio.get("https://dog.ceo/api/breeds/image/random").then((value) {
+    _dio.get("https://randomuser.me/api/").then((value) {
       setState(() {
         comingData = value.data;
       });
@@ -56,7 +56,7 @@ class _DisplayDataState extends State<DisplayData> {
                       color: Colors.transparent,
                       image: DecorationImage(
                         image: NetworkImage(
-                          comingData["message"],
+                          comingData["results"][0]["picture"]["large"],
                         ),
                         fit: BoxFit.cover,
                       ),
@@ -73,3 +73,6 @@ class _DisplayDataState extends State<DisplayData> {
     );
   }
 }
+
+//state management
+//cubit

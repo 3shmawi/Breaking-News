@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../screens/l3/test_display_json_data.dart';
+import '../screens/l1&l2/calculator.dart';
 
 class AlaaApp extends StatelessWidget {
   const AlaaApp({super.key});
@@ -9,7 +9,7 @@ class AlaaApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DisplayData(),
+      home: AlaaHomeView(),
     );
   }
 }
