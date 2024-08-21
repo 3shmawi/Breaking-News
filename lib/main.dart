@@ -1,8 +1,9 @@
-import 'package:c3/tasneim/app/app.dart';
 import 'package:flutter/material.dart';
+
+import 'ahmed_alaa/app/app.dart';
 
 void main() {
   runApp(
-    TasneimApp(),
+    AlaaApp(),
   );
 }

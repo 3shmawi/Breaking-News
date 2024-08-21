@@ -1,6 +1,7 @@
 import 'package:c3/ahmed_alaa/screens/l1&l2/secret_page.dart';
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AlaaHomeView extends StatefulWidget {
   const AlaaHomeView({super.key});
@@ -10,8 +11,20 @@ class AlaaHomeView extends StatefulWidget {
 }
 
 class _AlaaHomeViewState extends State<AlaaHomeView> {
-  List<String> results = [];
-  final String password = "81243";
+  Set<String> results = {};
+  String password = "12345678";
+
+  void getPassword() async {
+    final _pref = await SharedPreferences.getInstance();
+    password = _pref.getString('password') ?? "12345678";
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    getPassword();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +61,7 @@ class _AlaaHomeViewState extends State<AlaaHomeView> {
               itemBuilder: (context, index) {
                 int reverseIndex = results.length - index - 1;
                 return Text(
-                  results[reverseIndex],
+                  results.elementAt(reverseIndex),
                   style: TextStyle(
                     color: Colors.grey,
                     fontSize: 20.0,
@@ -165,13 +178,6 @@ class _AlaaHomeViewState extends State<AlaaHomeView> {
 
 //⌫
   buttonPressed(String buttonText) {
-    if (equation == password) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => SecretPage(),
-        ),
-      );
-    }
     setState(() {
       if (buttonText == "CLEAR") {
         equation = "0";
@@ -186,6 +192,7 @@ class _AlaaHomeViewState extends State<AlaaHomeView> {
           equation = "0";
         }
       } else if (buttonText == "=") {
+        getPassword();
         equationFontSize = 20.0;
         resultFontSize = 40.0;
 
@@ -200,6 +207,13 @@ class _AlaaHomeViewState extends State<AlaaHomeView> {
           ContextModel cm = ContextModel();
           result = '${exp.evaluate(EvaluationType.REAL, cm)}';
           results.add("${equation} = ${result}");
+          if (result == "$password.0") {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => SecretPage(),
+              ),
+            );
+          }
         } catch (e) {
           result = "Error";
         }

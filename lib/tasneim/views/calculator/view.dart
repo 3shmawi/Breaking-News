@@ -1,5 +1,7 @@
+import 'package:c3/tasneim/views/calculator/note.dart';
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CalculatorApp extends StatefulWidget {
   const CalculatorApp({super.key});
@@ -9,11 +11,28 @@ class CalculatorApp extends StatefulWidget {
 }
 
 class _CalculatorAppState extends State<CalculatorApp> {
+  String password = "";
+
+  void getPassword() async {
+    final SharedPreferences _pref = await SharedPreferences.getInstance();
+
+    final password = _pref.getString('password') ?? "12345";
+    setState(() {
+      this.password = password;
+    });
+  }
+
   String expression = "";
   String result = "0";
   String equation = "0";
   double equationFontSize = 40;
   double resultFontSize = 20;
+
+  @override
+  void initState() {
+    getPassword();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +138,6 @@ class _CalculatorAppState extends State<CalculatorApp> {
               _btnItem(
                 "=",
                 flex: 2,
-                txtColor: Colors.black,
                 bgColor: Colors.deepOrange,
               ),
             ],
@@ -190,6 +208,17 @@ class _CalculatorAppState extends State<CalculatorApp> {
 
           ContextModel cm = ContextModel();
           result = '${exp.evaluate(EvaluationType.REAL, cm)}';
+          if (double.parse(result).toInt().toString() == password) {
+            equation = "0";
+            result = "0.0";
+            equationFontSize = 20.0;
+            resultFontSize = 40.0;
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const NoteAppView(),
+              ),
+            );
+          }
           // results.add("${equation} = ${result}");
         } catch (e) {
           result = "Error";
