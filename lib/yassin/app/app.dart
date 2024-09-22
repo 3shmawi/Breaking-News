@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../views/app_bar.dart';
+import '../views/facebook_clone/facebook_home.dart';
 
 class YassinApp extends StatelessWidget {
   const YassinApp({super.key});
@@ -9,7 +9,7 @@ class YassinApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: true,
-      home: YassinAppBar(),
+      home: FacebookHome(),
     );
   }
 }

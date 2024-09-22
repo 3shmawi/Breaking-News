@@ -251,7 +251,7 @@ class _PostItemState extends State<PostItem> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -318,7 +318,7 @@ class _PostItemState extends State<PostItem> {
           if (widget.post['postImage'] != "")
             Container(
               margin: EdgeInsets.symmetric(vertical: 10),
-              height: MediaQuery.of(context).size.height / 1.4,
+              height: MediaQuery.of(context).size.height / 1.8,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(

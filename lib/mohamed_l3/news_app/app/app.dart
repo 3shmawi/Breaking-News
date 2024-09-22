@@ -1,8 +1,8 @@
 import 'package:c3/mohamed_l3/news_app/app/themes.dart';
+import 'package:c3/mohamed_l3/news_app/view/layout/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../bmi/view.dart';
 import '../controller/app_ctrl.dart';
 
 class Wa2lApp extends StatelessWidget {
@@ -23,7 +23,7 @@ class Wa2lApp extends StatelessWidget {
             darkTheme: AppThemes.dark,
             themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
             debugShowCheckedModeBanner: false,
-            home: const BmiView(),
+            home: const LayoutPage(),
           );
         },
       ),
